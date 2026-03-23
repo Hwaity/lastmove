@@ -1,0 +1,351 @@
+[debug] [2026-03-23T22:08:54.031Z] ----------------------------------------------------------------------
+[debug] [2026-03-23T22:08:54.034Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\mohal\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2026-03-23T22:08:54.034Z] CLI Version:   15.11.0
+[debug] [2026-03-23T22:08:54.034Z] Platform:      win32
+[debug] [2026-03-23T22:08:54.034Z] Node Version:  v24.14.0
+[debug] [2026-03-23T22:08:54.034Z] Time:          Tue Mar 24 2026 01:08:54 GMT+0300 (GMT+03:00)
+[debug] [2026-03-23T22:08:54.034Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\mohal\OneDrive\Desktop\lastmove
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2026-03-23T22:08:58.694Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-23T22:08:58.694Z] > authorizing via signed-in user (moh.alhwaitat@gmail.com)
+[debug] [2026-03-23T22:08:58.695Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:08:58.695Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:08:58.696Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/lastmove-72a58 [none]
+[debug] [2026-03-23T22:08:59.167Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/lastmove-72a58 200
+[debug] [2026-03-23T22:08:59.167Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/lastmove-72a58 {"projectId":"lastmove-72a58","projectNumber":"913340659668","displayName":"lastmove","name":"projects/lastmove-72a58","resources":{"hostingSite":"lastmove-72a58","realtimeDatabaseInstance":"lastmove-72a58-default-rtdb"},"state":"ACTIVE","etag":"1_d14502d0-284c-4472-a9f5-1708287fb906"}
+[info] i  Using project lastmove-72a58 (lastmove) . 
+[info] 
+=== Dataconnect Setup
+[info] i  dataconnect: ensuring required API firebasedataconnect.googleapis.com is enabled... 
+[info] i  dataconnect: ensuring required API sqladmin.googleapis.com is enabled... 
+[debug] [2026-03-23T22:08:59.179Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:08:59.179Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:08:59.179Z] >>> [apiv2][query] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/-/services [none]
+[debug] [2026-03-23T22:09:00.436Z] <<< [apiv2][status] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/-/services 200
+[debug] [2026-03-23T22:09:00.436Z] <<< [apiv2][body] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/-/services {"services":[{"name":"projects/lastmove-72a58/locations/me-west1/services/lastmove","createTime":"2026-03-23T21:39:00.504518303Z","updateTime":"2026-03-23T22:08:55.975328753Z","uid":"be80ba7f-31b6-45a9-a11f-2546d8018d78","reconciling":false,"etag":"-BJKQfILtZpykELXoBtRxxgk8hNx3ysrVi9kw6_4Tl4"}]}
+[debug] [2026-03-23T22:09:02.889Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:02.889Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:02.889Z] >>> [apiv2][query] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/me-west1/services/lastmove/schemas pageSize=100&pageToken=&fields=schemas.name%2Cschemas.datasources%2Cschemas.source
+[debug] [2026-03-23T22:09:03.297Z] <<< [apiv2][status] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/me-west1/services/lastmove/schemas 200
+[debug] [2026-03-23T22:09:03.297Z] <<< [apiv2][body] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/me-west1/services/lastmove/schemas {"schemas":[{"name":"projects/lastmove-72a58/locations/me-west1/services/lastmove/schemas/main","source":{"files":[{"path":"schema.gql","content":"type User @table {\n  username: String!\n  email: String!\n  createdAt: Timestamp!\n  bio: String\n  profilePictureUrl: String\n  lastOnline: Timestamp\n}\n\ntype Game @table {\n  title: String!\n  genre: String!\n  developer: String!\n  releaseYear: Int!\n  createdAt: Timestamp!\n  description: String\n  imageUrl: String\n  trailerUrl: String\n  minPlayers: Int\n  maxPlayers: Int\n}\n\ntype UserGame @table {\n  user: User!\n  game: Game!\n  status: String!\n  addedAt: Timestamp!\n  lastPlayedAt: Timestamp\n  playtimeHours: Float\n  achievementsUnlocked: Int\n}\n\ntype Review @table {\n  user: User!\n  game: Game!\n  rating: Int!\n  createdAt: Timestamp!\n  updatedAt: Timestamp!\n  reviewText: String\n}\n\ntype Friendship @table {\n  initiator: User!\n  recipient: User!\n  status: String!\n  createdAt: Timestamp!\n}"}]},"datasources":[{"postgresql":{"database":"fdcdb","cloudSql":{"instance":"projects/lastmove-72a58/locations/me-west1/instances/lastmove-fdc"},"schemaMigration":"MIGRATE_COMPATIBLE"}}]}]}
+[debug] [2026-03-23T22:09:03.298Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:03.298Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:03.298Z] >>> [apiv2][query] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/me-west1/services/lastmove/connectors pageSize=100&pageToken=&fields=connectors.name%2Cconnectors.source.files
+[debug] [2026-03-23T22:09:03.495Z] <<< [apiv2][status] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/me-west1/services/lastmove/connectors 200
+[debug] [2026-03-23T22:09:03.495Z] <<< [apiv2][body] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/me-west1/services/lastmove/connectors {}
+[debug] [2026-03-23T22:09:03.495Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:03.495Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:03.495Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/lastmove-72a58/billingInfo [none]
+[debug] [2026-03-23T22:09:04.321Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/lastmove-72a58/billingInfo 200
+[debug] [2026-03-23T22:09:04.321Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/lastmove-72a58/billingInfo {"name":"projects/lastmove-72a58/billingInfo","projectId":"lastmove-72a58","billingAccountName":"billingAccounts/012901-0856A8-508F22","billingEnabled":true}
+[debug] [2026-03-23T22:09:04.322Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:04.322Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:04.322Z] >>> [apiv2][query] GET https://monitoring.googleapis.com/v3/projects/lastmove-72a58/timeSeries/ filter=metric.type%3D%22serviceruntime.googleapis.com%2Fquota%2Fallocation%2Fusage%22+AND+metric.label.quota_metric+%3D+%22sqladmin.googleapis.com%2Ffdc_lifetime_free_trial_per_project%22&interval.endTime=2026-03-23T22%3A09%3A04.321Z&interval.startTime=2026-03-16T22%3A09%3A04.321Z
+[debug] [2026-03-23T22:09:05.931Z] <<< [apiv2][status] GET https://monitoring.googleapis.com/v3/projects/lastmove-72a58/timeSeries/ 200
+[debug] [2026-03-23T22:09:05.931Z] <<< [apiv2][body] GET https://monitoring.googleapis.com/v3/projects/lastmove-72a58/timeSeries/ {"timeSeries":[{"metric":{"labels":{"quota_metric":"sqladmin.googleapis.com/fdc_lifetime_free_trial_per_project"},"type":"serviceruntime.googleapis.com/quota/allocation/usage"},"resource":{"type":"consumer_quota","labels":{"location":"global","service":"sqladmin.googleapis.com","project_id":"lastmove-72a58"}},"metricKind":"GAUGE","valueType":"INT64","points":[{"interval":{"startTime":"2026-03-23T21:38:55Z","endTime":"2026-03-23T21:38:55Z"},"value":{"int64Value":"1"}}]}],"unit":"1"}
+[warn] !  dataconnect: CloudSQL no cost trial has already been used on this project. 
+[info] +  dataconnect: Detected existing apps . (web), lastmove (admin_node), functions (admin_node) 
+[info] i  dataconnect\dataconnect.yaml is unchanged 
+[info] i  dataconnect\schema\schema.gql is unchanged 
+[info] +  Wrote dataconnect\example\connector.yaml 
+[info] +  Wrote dataconnect\example\connector.yaml 
+[info] i  dataconnect: Installing the generated SDKs ... 
+[debug] [2026-03-23T22:09:12.155Z] defaultcredentials: writing to file C:\Users\mohal\AppData\Roaming\firebase\moh_alhwaitat_gmail.com_application_default_credentials.json
+[error] !!  dataconnect: Failed to generate Data Connect SDKs
+Command failed with exit code 1 
+[info] +  dataconnect: Installed generated SDKs for . (web) 
+[info] i  Visit https://firebase.google.com/docs/data-connect/web-sdk#react for more information on how to set up React Generated SDKs for Firebase Data Connect 
+[info] 
+=== Firestore Setup
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-03-23T22:09:12.353Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:12.353Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:12.353Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/lastmove-72a58/databases [none]
+[debug] [2026-03-23T22:09:13.024Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/lastmove-72a58/databases 200
+[debug] [2026-03-23T22:09:13.024Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/lastmove-72a58/databases {}
+[debug] [2026-03-23T22:09:13.024Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:13.024Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:13.024Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/lastmove-72a58/locations [none]
+[debug] [2026-03-23T22:09:13.261Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/lastmove-72a58/locations 200
+[debug] [2026-03-23T22:09:13.261Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/lastmove-72a58/locations {"locations":[{"name":"projects/lastmove-72a58/locations/eur3","labels":{"appengine.googleapis.com/geo":"europe-west","cloud.googleapis.com/location":"eur3","cloud.googleapis.com/geo":"eur3"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"eur3","displayName":"Europe"},{"name":"projects/lastmove-72a58/locations/nam5","labels":{"appengine.googleapis.com/geo":"us-central","cloud.googleapis.com/location":"nam5","cloud.googleapis.com/geo":"nam5"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"nam5","displayName":"United States"},{"name":"projects/lastmove-72a58/locations/nam7","labels":{"cloud.googleapis.com/location":"nam7","cloud.googleapis.com/geo":"nam7"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"nam7","displayName":"United States"},{"name":"projects/lastmove-72a58/locations/africa-south1","labels":{"cloud.googleapis.com/location":"africa-south1","cloud.googleapis.com/region":"africa-south1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"africa-south1","displayName":"Johannesburg"},{"name":"projects/lastmove-72a58/locations/asia-east1","labels":{"appengine.googleapis.com/region":"asia-east1","cloud.googleapis.com/location":"asia-east1","cloud.googleapis.com/region":"asia-east1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"asia-east1","displayName":"Taiwan"},{"name":"projects/lastmove-72a58/locations/asia-east2","labels":{"appengine.googleapis.com/region":"asia-east2","cloud.googleapis.com/location":"asia-east2","cloud.googleapis.com/region":"asia-east2"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"asia-east2","displayName":"Hong Kong"},{"name":"projects/lastmove-72a58/locations/asia-northeast1","labels":{"appengine.googleapis.com/region":"asia-northeast1","cloud.googleapis.com/location":"asia-northeast1","cloud.googleapis.com/region":"asia-northeast1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"asia-northeast1","displayName":"Tokyo"},{"name":"projects/lastmove-72a58/locations/asia-northeast2","labels":{"appengine.googleapis.com/region":"asia-northeast2","cloud.googleapis.com/location":"asia-northeast2","cloud.googleapis.com/region":"asia-northeast2"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"asia-northeast2","displayName":"Osaka"},{"name":"projects/lastmove-72a58/locations/asia-northeast3","labels":{"appengine.googleapis.com/region":"asia-northeast3","cloud.googleapis.com/location":"asia-northeast3","cloud.googleapis.com/region":"asia-northeast3"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"asia-northeast3","displayName":"Seoul"},{"name":"projects/lastmove-72a58/locations/asia-south1","labels":{"appengine.googleapis.com/region":"asia-south1","cloud.googleapis.com/location":"asia-south1","cloud.googleapis.com/region":"asia-south1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"asia-south1","displayName":"Mumbai"},{"name":"projects/lastmove-72a58/locations/asia-south2","labels":{"cloud.googleapis.com/location":"asia-south2","cloud.googleapis.com/region":"asia-south2"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"asia-south2","displayName":"Delhi"},{"name":"projects/lastmove-72a58/locations/asia-southeast1","labels":{"appengine.googleapis.com/region":"asia-southeast1","cloud.googleapis.com/location":"asia-southeast1","cloud.googleapis.com/region":"asia-southeast1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"asia-southeast1","displayName":"Singapore"},{"name":"projects/lastmove-72a58/locations/asia-southeast2","labels":{"appengine.googleapis.com/region":"asia-southeast2","cloud.googleapis.com/location":"asia-southeast2","cloud.googleapis.com/region":"asia-southeast2"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"asia-southeast2","displayName":"Jakarta"},{"name":"projects/lastmove-72a58/locations/asia-southeast3","labels":{"cloud.googleapis.com/location":"asia-southeast3","cloud.googleapis.com/region":"asia-southeast3"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"asia-southeast3","displayName":"Bangkok"},{"name":"projects/lastmove-72a58/locations/australia-southeast1","labels":{"appengine.googleapis.com/region":"australia-southeast1","cloud.googleapis.com/location":"australia-southeast1","cloud.googleapis.com/region":"australia-southeast1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"australia-southeast1","displayName":"Sydney"},{"name":"projects/lastmove-72a58/locations/australia-southeast2","labels":{"cloud.googleapis.com/location":"australia-southeast2","cloud.googleapis.com/region":"australia-southeast2"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"australia-southeast2","displayName":"Melbourne"},{"name":"projects/lastmove-72a58/locations/europe-central2","labels":{"appengine.googleapis.com/region":"europe-central2","cloud.googleapis.com/location":"europe-central2","cloud.googleapis.com/region":"europe-central2"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"europe-central2","displayName":"Warsaw"},{"name":"projects/lastmove-72a58/locations/europe-north1","labels":{"cloud.googleapis.com/location":"europe-north1","cloud.googleapis.com/region":"europe-north1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"europe-north1","displayName":"Finland"},{"name":"projects/lastmove-72a58/locations/europe-north2","labels":{"cloud.googleapis.com/location":"europe-north2","cloud.googleapis.com/region":"europe-north2"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"europe-north2","displayName":"Stockholm"},{"name":"projects/lastmove-72a58/locations/europe-southwest1","labels":{"cloud.googleapis.com/location":"europe-southwest1","cloud.googleapis.com/region":"europe-southwest1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"europe-southwest1","displayName":"Madrid"},{"name":"projects/lastmove-72a58/locations/europe-west1","labels":{"cloud.googleapis.com/location":"europe-west1","cloud.googleapis.com/region":"europe-west1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"europe-west1","displayName":"Belgium"},{"name":"projects/lastmove-72a58/locations/europe-west10","labels":{"cloud.googleapis.com/location":"europe-west10","cloud.googleapis.com/region":"europe-west10"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"europe-west10","displayName":"Berlin"},{"name":"projects/lastmove-72a58/locations/europe-west12","labels":{"cloud.googleapis.com/location":"europe-west12","cloud.googleapis.com/region":"europe-west12"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"europe-west12","displayName":"Turin"},{"name":"projects/lastmove-72a58/locations/europe-west2","labels":{"appengine.googleapis.com/region":"europe-west2","cloud.googleapis.com/location":"europe-west2","cloud.googleapis.com/region":"europe-west2"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"europe-west2","displayName":"London"},{"name":"projects/lastmove-72a58/locations/europe-west3","labels":{"appengine.googleapis.com/region":"europe-west3","cloud.googleapis.com/location":"europe-west3","cloud.googleapis.com/region":"europe-west3"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"europe-west3","displayName":"Frankfurt"},{"name":"projects/lastmove-72a58/locations/europe-west4","labels":{"cloud.googleapis.com/location":"europe-west4","cloud.googleapis.com/region":"europe-west4"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"europe-west4","displayName":"Netherlands"},{"name":"projects/lastmove-72a58/locations/europe-west6","labels":{"appengine.googleapis.com/region":"europe-west6","cloud.googleapis.com/location":"europe-west6","cloud.googleapis.com/region":"europe-west6"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"europe-west6","displayName":"Zurich"},{"name":"projects/lastmove-72a58/locations/europe-west8","labels":{"cloud.googleapis.com/location":"europe-west8","cloud.googleapis.com/region":"europe-west8"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"europe-west8","displayName":"Milan"},{"name":"projects/lastmove-72a58/locations/europe-west9","labels":{"cloud.googleapis.com/location":"europe-west9","cloud.googleapis.com/region":"europe-west9"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"europe-west9","displayName":"Paris"},{"name":"projects/lastmove-72a58/locations/me-central1","labels":{"cloud.googleapis.com/location":"me-central1","cloud.googleapis.com/region":"me-central1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"me-central1","displayName":"Doha"},{"name":"projects/lastmove-72a58/locations/me-central2","labels":{"cloud.googleapis.com/location":"me-central2","cloud.googleapis.com/region":"me-central2"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"me-central2","displayName":"Dammam"},{"name":"projects/lastmove-72a58/locations/me-west1","labels":{"cloud.googleapis.com/location":"me-west1","cloud.googleapis.com/region":"me-west1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"me-west1","displayName":"Tel Aviv"},{"name":"projects/lastmove-72a58/locations/northamerica-northeast1","labels":{"appengine.googleapis.com/region":"northamerica-northeast1","cloud.googleapis.com/location":"northamerica-northeast1","cloud.googleapis.com/region":"northamerica-northeast1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"northamerica-northeast1","displayName":"Montréal"},{"name":"projects/lastmove-72a58/locations/northamerica-northeast2","labels":{"cloud.googleapis.com/location":"northamerica-northeast2","cloud.googleapis.com/region":"northamerica-northeast2"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"northamerica-northeast2","displayName":"Toronto"},{"name":"projects/lastmove-72a58/locations/northamerica-south1","labels":{"cloud.googleapis.com/location":"northamerica-south1","cloud.googleapis.com/region":"northamerica-south1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"northamerica-south1","displayName":"Mexico"},{"name":"projects/lastmove-72a58/locations/southamerica-east1","labels":{"appengine.googleapis.com/region":"southamerica-east1","cloud.googleapis.com/location":"southamerica-east1","cloud.googleapis.com/region":"southamerica-east1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"southamerica-east1","displayName":"São Paulo"},{"name":"projects/lastmove-72a58/locations/southamerica-west1","labels":{"cloud.googleapis.com/location":"southamerica-west1","cloud.googleapis.com/region":"southamerica-west1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"southamerica-west1","displayName":"Santiago"},{"name":"projects/lastmove-72a58/locations/us-central1","labels":{"cloud.googleapis.com/location":"us-central1","cloud.googleapis.com/region":"us-central1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"us-central1","displayName":"Iowa"},{"name":"projects/lastmove-72a58/locations/us-east1","labels":{"appengine.googleapis.com/region":"us-east1","cloud.googleapis.com/location":"us-east1","cloud.googleapis.com/region":"us-east1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"us-east1","displayName":"South Carolina"},{"name":"projects/lastmove-72a58/locations/us-east4","labels":{"appengine.googleapis.com/region":"us-east4","cloud.googleapis.com/location":"us-east4","cloud.googleapis.com/region":"us-east4"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"us-east4","displayName":"Northern Virginia"},{"name":"projects/lastmove-72a58/locations/us-east5","labels":{"cloud.googleapis.com/location":"us-east5","cloud.googleapis.com/region":"us-east5"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"us-east5","displayName":"Columbus"},{"name":"projects/lastmove-72a58/locations/us-south1","labels":{"cloud.googleapis.com/location":"us-south1","cloud.googleapis.com/region":"us-south1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"us-south1","displayName":"Dallas"},{"name":"projects/lastmove-72a58/locations/us-west1","labels":{"appengine.googleapis.com/region":"us-west1","cloud.googleapis.com/location":"us-west1","cloud.googleapis.com/region":"us-west1"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"us-west1","displayName":"Oregon"},{"name":"projects/lastmove-72a58/locations/us-west2","labels":{"appengine.googleapis.com/region":"us-west2","cloud.googleapis.com/location":"us-west2","cloud.googleapis.com/region":"us-west2"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"us-west2","displayName":"Los Angeles"},{"name":"projects/lastmove-72a58/locations/us-west3","labels":{"appengine.googleapis.com/region":"us-west3","cloud.googleapis.com/location":"us-west3","cloud.googleapis.com/region":"us-west3"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"us-west3","displayName":"Salt Lake City"},{"name":"projects/lastmove-72a58/locations/us-west4","labels":{"appengine.googleapis.com/region":"us-west4","cloud.googleapis.com/location":"us-west4","cloud.googleapis.com/region":"us-west4"},"metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.LocationMetadata"},"locationId":"us-west4","displayName":"Las Vegas"}]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2026-03-23T22:09:18.880Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:18.881Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:18.881Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/lastmove-72a58/releases pageSize=10&pageToken=
+[debug] [2026-03-23T22:09:19.774Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/lastmove-72a58/releases 200
+[debug] [2026-03-23T22:09:19.775Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/lastmove-72a58/releases {}
+[info] i  firestore.rules is unchanged 
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2026-03-23T22:09:20.433Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:20.433Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:20.433Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:20.433Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:20.433Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/lastmove-72a58/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2026-03-23T22:09:20.434Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/lastmove-72a58/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2026-03-23T22:09:21.058Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/lastmove-72a58/databases/(default)/collectionGroups/-/indexes 404
+[debug] [2026-03-23T22:09:21.058Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/lastmove-72a58/databases/(default)/collectionGroups/-/indexes {"error":{"code":404,"message":"Project 'lastmove-72a58' or database '(default)' does not exist.","status":"NOT_FOUND"}}
+[info] i  firestore.indexes.json is unchanged 
+[info] 
+=== Genkit Setup
+[debug] [2026-03-23T22:09:21.348Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/lastmove-72a58/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 404
+[debug] [2026-03-23T22:09:21.348Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/lastmove-72a58/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"error":{"code":404,"message":"Project 'lastmove-72a58' or database '(default)' does not exist.","status":"NOT_FOUND"}}
+[debug] [2026-03-23T22:09:28.167Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-23T22:09:28.167Z] > authorizing via signed-in user (moh.alhwaitat@gmail.com)
+[debug] [2026-03-23T22:09:28.167Z] [iam] checking project lastmove-72a58 for permissions ["firebase.projects.get"]
+[debug] [2026-03-23T22:09:28.168Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:28.168Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:09:28.168Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:testIamPermissions [none]
+[debug] [2026-03-23T22:09:28.168Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:testIamPermissions  x-goog-user-project=lastmove-72a58
+[debug] [2026-03-23T22:09:28.168Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-03-23T22:09:29.054Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:testIamPermissions 200
+[debug] [2026-03-23T22:09:29.054Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] i  functions/.eslintrc.js is unchanged 
+[info] i  functions/tsconfig.dev.json is unchanged 
+[info] +  Wrote functions/package.json 
+[info] i  functions/tsconfig.json is unchanged 
+[info] i  functions/src/index.ts is unchanged 
+[info] i  functions/.gitignore is unchanged 
+[info] 
+[info] i  genkit: Installing Genkit CLI version 1.30.1
+ 
+[info] i  aiplatform: ensuring required API aiplatform.googleapis.com is enabled... 
+[info] i  genkit: Installing NPM packages for genkit 
+[info] +  genkit: Successfully installed NPM packages 
+[info] i  genkit: Updating tsconfig.json 
+[info] +  genkit: Successfully updated tsconfig.json 
+[info] i  genkit: Updating package.json 
+[info] +  genkit: Successfully updated package.json 
+[info] Telemetry data can be used to monitor and gain insights into your AI features. There may be a cost associated with using this feature. See https://firebase.google.com/docs/genkit/observability/telemetry-collection.
+[info] i  genkit: Generating sample file 
+[info] +  genkit: Successfully generated sample file (src/genkit-sample.ts) 
+[info] 
+[info] 
+Login to Google Cloud using:
+[info]     gcloud auth application-default login --project lastmove-72a58
+
+[info] Then start the Genkit developer experience by running:
+[info]     cd functions && npm run genkit:start
+[info] 
+=== Functions Setup
+[debug] [2026-03-23T22:11:26.604Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-23T22:11:26.604Z] > authorizing via signed-in user (moh.alhwaitat@gmail.com)
+[debug] [2026-03-23T22:11:26.604Z] [iam] checking project lastmove-72a58 for permissions ["firebase.projects.get"]
+[debug] [2026-03-23T22:11:26.604Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:26.604Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:26.604Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:testIamPermissions [none]
+[debug] [2026-03-23T22:11:26.604Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:testIamPermissions  x-goog-user-project=lastmove-72a58
+[debug] [2026-03-23T22:11:26.604Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-03-23T22:11:27.429Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:testIamPermissions 200
+[debug] [2026-03-23T22:11:27.429Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+Detected existing codebase(s): default
+
+[info] 
+Overwriting codebase default...
+
+[info] i  functions/.eslintrc.js is unchanged 
+[info] i  functions/tsconfig.dev.json is unchanged 
+[info] +  Wrote functions/package.json 
+[info] +  Wrote functions/tsconfig.json 
+[info] i  functions/src/index.ts is unchanged 
+[info] i  functions/.gitignore is unchanged 
+[info] 
+=== App Hosting Setup
+[debug] [2026-03-23T22:11:44.809Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:44.809Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:44.809Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-03-23T22:11:44.810Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/firebaseapphosting.googleapis.com  x-goog-user-project=lastmove-72a58
+[debug] [2026-03-23T22:11:45.940Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-03-23T22:11:45.940Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-03-23T22:11:45.940Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:45.940Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:45.940Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/firebaseapphosting.googleapis.com:enable [none]
+[debug] [2026-03-23T22:11:45.940Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/firebaseapphosting.googleapis.com:enable  x-goog-user-project=lastmove-72a58
+[debug] [2026-03-23T22:11:47.271Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/firebaseapphosting.googleapis.com:enable 200
+[debug] [2026-03-23T22:11:47.271Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/firebaseapphosting.googleapis.com:enable [omitted]
+[debug] [2026-03-23T22:11:57.285Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:57.285Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:57.285Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:57.285Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:57.285Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:57.285Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:57.285Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:57.285Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:57.285Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:57.285Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:57.286Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:57.286Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:57.286Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/developerconnect.googleapis.com [none]
+[debug] [2026-03-23T22:11:57.286Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/developerconnect.googleapis.com  x-goog-user-project=lastmove-72a58
+[debug] [2026-03-23T22:11:57.286Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/cloudbuild.googleapis.com [none]
+[debug] [2026-03-23T22:11:57.286Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/cloudbuild.googleapis.com  x-goog-user-project=lastmove-72a58
+[debug] [2026-03-23T22:11:57.287Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/secretmanager.googleapis.com [none]
+[debug] [2026-03-23T22:11:57.287Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/secretmanager.googleapis.com  x-goog-user-project=lastmove-72a58
+[debug] [2026-03-23T22:11:57.288Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/run.googleapis.com [none]
+[debug] [2026-03-23T22:11:57.288Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/run.googleapis.com  x-goog-user-project=lastmove-72a58
+[debug] [2026-03-23T22:11:57.289Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/artifactregistry.googleapis.com [none]
+[debug] [2026-03-23T22:11:57.289Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/artifactregistry.googleapis.com  x-goog-user-project=lastmove-72a58
+[debug] [2026-03-23T22:11:57.289Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/iam.googleapis.com [none]
+[debug] [2026-03-23T22:11:57.289Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/iam.googleapis.com  x-goog-user-project=lastmove-72a58
+[debug] [2026-03-23T22:11:58.277Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/cloudbuild.googleapis.com 200
+[debug] [2026-03-23T22:11:58.277Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/cloudbuild.googleapis.com [omitted]
+[debug] [2026-03-23T22:11:58.307Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/artifactregistry.googleapis.com 200
+[debug] [2026-03-23T22:11:58.307Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/artifactregistry.googleapis.com [omitted]
+[debug] [2026-03-23T22:11:58.334Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/secretmanager.googleapis.com 200
+[debug] [2026-03-23T22:11:58.334Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/secretmanager.googleapis.com [omitted]
+[debug] [2026-03-23T22:11:58.380Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/run.googleapis.com 200
+[debug] [2026-03-23T22:11:58.380Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/run.googleapis.com [omitted]
+[debug] [2026-03-23T22:11:58.473Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/developerconnect.googleapis.com 200
+[debug] [2026-03-23T22:11:58.473Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/developerconnect.googleapis.com [omitted]
+[debug] [2026-03-23T22:11:58.473Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:58.473Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:11:58.473Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/developerconnect.googleapis.com:enable [none]
+[debug] [2026-03-23T22:11:58.473Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/developerconnect.googleapis.com:enable  x-goog-user-project=lastmove-72a58
+[debug] [2026-03-23T22:11:58.532Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/iam.googleapis.com 200
+[debug] [2026-03-23T22:11:58.533Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/iam.googleapis.com [omitted]
+[debug] [2026-03-23T22:11:59.985Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/developerconnect.googleapis.com:enable 200
+[debug] [2026-03-23T22:11:59.985Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/lastmove-72a58/services/developerconnect.googleapis.com:enable [omitted]
+[debug] [2026-03-23T22:12:09.990Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:12:09.990Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:12:09.990Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/lastmove-72a58/serviceAccounts/firebase-app-hosting-compute@lastmove-72a58.iam.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-03-23T22:12:09.990Z] >>> [apiv2][(partial)header] POST https://iam.googleapis.com/v1/projects/lastmove-72a58/serviceAccounts/firebase-app-hosting-compute@lastmove-72a58.iam.gserviceaccount.com:testIamPermissions  x-goog-user-project=lastmove-72a58
+[debug] [2026-03-23T22:12:09.990Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/lastmove-72a58/serviceAccounts/firebase-app-hosting-compute@lastmove-72a58.iam.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-03-23T22:12:11.045Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/lastmove-72a58/serviceAccounts/firebase-app-hosting-compute@lastmove-72a58.iam.gserviceaccount.com:testIamPermissions 404
+[debug] [2026-03-23T22:12:11.045Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/lastmove-72a58/serviceAccounts/firebase-app-hosting-compute@lastmove-72a58.iam.gserviceaccount.com:testIamPermissions {"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}}
+[debug] [2026-03-23T22:12:11.045Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:12:11.045Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:12:11.045Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/lastmove-72a58/serviceAccounts [none]
+[debug] [2026-03-23T22:12:11.045Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/lastmove-72a58/serviceAccounts {"accountId":"firebase-app-hosting-compute","serviceAccount":{"displayName":"Firebase App Hosting compute service account","description":"Default service account used to run builds and deploys for Firebase App Hosting"}}
+[debug] [2026-03-23T22:12:11.983Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/lastmove-72a58/serviceAccounts 200
+[debug] [2026-03-23T22:12:11.983Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/lastmove-72a58/serviceAccounts [omitted]
+[debug] [2026-03-23T22:12:11.983Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:12:11.983Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:12:11.983Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:getIamPolicy [none]
+[debug] [2026-03-23T22:12:12.872Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:getIamPolicy 200
+[debug] [2026-03-23T22:12:12.872Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:getIamPolicy {"version":1,"etag":"BwZNuFMcs1c=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:913340659668@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-913340659668@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-913340659668@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-913340659668@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:913340659668-compute@developer.gserviceaccount.com","serviceAccount:lastmove-72a58@appspot.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:service-913340659668@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-fbsvc@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/firebaseappcheck.admin","members":["serviceAccount:firebase-adminsdk-fbsvc@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-fbsvc@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/firebasedatabase.admin","members":["serviceAccount:firebase-adminsdk-fbsvc@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/firebasedataconnect.serviceAgent","members":["serviceAccount:service-913340659668@gcp-sa-firebasedataconnect.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-fbsvc@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:moh.alhwaitat@gmail.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-913340659668@serverless-robot-prod.iam.gserviceaccount.com"]}]}
+[debug] [2026-03-23T22:12:12.872Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:12:12.872Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:12:12.872Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:setIamPolicy [none]
+[debug] [2026-03-23T22:12:12.872Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:setIamPolicy {"policy":{"version":1,"etag":"BwZNuFMcs1c=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:913340659668@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-913340659668@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-913340659668@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-913340659668@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:913340659668-compute@developer.gserviceaccount.com","serviceAccount:lastmove-72a58@appspot.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:service-913340659668@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-fbsvc@lastmove-72a58.iam.gserviceaccount.com","serviceAccount:firebase-app-hosting-compute@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/firebaseappcheck.admin","members":["serviceAccount:firebase-adminsdk-fbsvc@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-fbsvc@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/firebasedatabase.admin","members":["serviceAccount:firebase-adminsdk-fbsvc@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/firebasedataconnect.serviceAgent","members":["serviceAccount:service-913340659668@gcp-sa-firebasedataconnect.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-fbsvc@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:moh.alhwaitat@gmail.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-913340659668@serverless-robot-prod.iam.gserviceaccount.com"]},{"role":"roles/firebaseapphosting.computeRunner","members":["serviceAccount:firebase-app-hosting-compute@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/developerconnect.readTokenAccessor","members":["serviceAccount:firebase-app-hosting-compute@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/storage.objectViewer","members":["serviceAccount:firebase-app-hosting-compute@lastmove-72a58.iam.gserviceaccount.com"]}]},"updateMask":"bindings"}
+[debug] [2026-03-23T22:12:13.835Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:setIamPolicy 200
+[debug] [2026-03-23T22:12:13.835Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/lastmove-72a58:setIamPolicy {"version":1,"etag":"BwZNuFRn9ms=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:913340659668@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-913340659668@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-913340659668@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-913340659668@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/developerconnect.readTokenAccessor","members":["serviceAccount:firebase-app-hosting-compute@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:913340659668-compute@developer.gserviceaccount.com","serviceAccount:lastmove-72a58@appspot.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:service-913340659668@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-fbsvc@lastmove-72a58.iam.gserviceaccount.com","serviceAccount:firebase-app-hosting-compute@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/firebaseappcheck.admin","members":["serviceAccount:firebase-adminsdk-fbsvc@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/firebaseapphosting.computeRunner","members":["serviceAccount:firebase-app-hosting-compute@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-fbsvc@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/firebasedatabase.admin","members":["serviceAccount:firebase-adminsdk-fbsvc@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/firebasedataconnect.serviceAgent","members":["serviceAccount:service-913340659668@gcp-sa-firebasedataconnect.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-fbsvc@lastmove-72a58.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:moh.alhwaitat@gmail.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-913340659668@serverless-robot-prod.iam.gserviceaccount.com"]},{"role":"roles/storage.objectViewer","members":["serviceAccount:firebase-app-hosting-compute@lastmove-72a58.iam.gserviceaccount.com"]}]}
+[info] i  This command links your local project to Firebase App Hosting. You will be able to deploy your web app with `firebase deploy` after setup. 
+[debug] [2026-03-23T22:12:34.762Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:12:34.762Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:12:34.762Z] >>> [apiv2][query] GET https://firebaseapphosting.googleapis.com/v1beta/projects/lastmove-72a58/locations/-/backends 
+[debug] [2026-03-23T22:12:36.035Z] <<< [apiv2][status] GET https://firebaseapphosting.googleapis.com/v1beta/projects/lastmove-72a58/locations/-/backends 200
+[debug] [2026-03-23T22:12:36.035Z] <<< [apiv2][body] GET https://firebaseapphosting.googleapis.com/v1beta/projects/lastmove-72a58/locations/-/backends {}
+[debug] [2026-03-23T22:15:44.709Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (C:\Users\mohal\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@inquirer\core\dist\commonjs\lib\create-prompt.js:101:37)
+    at Interface.emit (node:events:508:28)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1327:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:284:20)
+    at ReadStream.emit (node:events:520:35)
+    at emitKeys (node:internal/readline/utils:371:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+    at ReadStream.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:563:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-03-23T22:15:47.927Z] ----------------------------------------------------------------------
+[debug] [2026-03-23T22:15:47.929Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\mohal\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2026-03-23T22:15:47.930Z] CLI Version:   15.11.0
+[debug] [2026-03-23T22:15:47.930Z] Platform:      win32
+[debug] [2026-03-23T22:15:47.930Z] Node Version:  v24.14.0
+[debug] [2026-03-23T22:15:47.930Z] Time:          Tue Mar 24 2026 01:15:47 GMT+0300 (GMT+03:00)
+[debug] [2026-03-23T22:15:47.930Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\mohal\OneDrive\Desktop\lastmove
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2026-03-23T22:15:51.885Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-23T22:15:51.886Z] > authorizing via signed-in user (moh.alhwaitat@gmail.com)
+[debug] [2026-03-23T22:15:51.886Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:15:51.887Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:15:51.888Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/lastmove-72a58 [none]
+[debug] [2026-03-23T22:15:52.340Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/lastmove-72a58 200
+[debug] [2026-03-23T22:15:52.340Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/lastmove-72a58 {"projectId":"lastmove-72a58","projectNumber":"913340659668","displayName":"lastmove","name":"projects/lastmove-72a58","resources":{"hostingSite":"lastmove-72a58","realtimeDatabaseInstance":"lastmove-72a58-default-rtdb"},"state":"ACTIVE","etag":"1_a7312d3f-ac95-4947-9643-a2736c8a8afb"}
+[info] i  Using project lastmove-72a58 (lastmove) . 
+[info] 
+=== Dataconnect Setup
+[info] i  dataconnect: ensuring required API firebasedataconnect.googleapis.com is enabled... 
+[info] i  dataconnect: ensuring required API sqladmin.googleapis.com is enabled... 
+[debug] [2026-03-23T22:15:52.352Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:15:52.352Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:15:52.352Z] >>> [apiv2][query] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/-/services [none]
+[debug] [2026-03-23T22:15:53.632Z] <<< [apiv2][status] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/-/services 200
+[debug] [2026-03-23T22:15:53.632Z] <<< [apiv2][body] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/-/services {"services":[{"name":"projects/lastmove-72a58/locations/me-west1/services/lastmove","createTime":"2026-03-23T21:39:00.504518303Z","updateTime":"2026-03-23T22:08:55.975328753Z","uid":"be80ba7f-31b6-45a9-a11f-2546d8018d78","reconciling":false,"etag":"-BJKQfILtZpykELXoBtRxxgk8hNx3ysrVi9kw6_4Tl4"}]}
+[debug] [2026-03-23T22:15:55.208Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:15:55.208Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:15:55.208Z] >>> [apiv2][query] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/me-west1/services/lastmove/schemas pageSize=100&pageToken=&fields=schemas.name%2Cschemas.datasources%2Cschemas.source
+[debug] [2026-03-23T22:15:55.595Z] <<< [apiv2][status] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/me-west1/services/lastmove/schemas 200
+[debug] [2026-03-23T22:15:55.595Z] <<< [apiv2][body] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/me-west1/services/lastmove/schemas {"schemas":[{"name":"projects/lastmove-72a58/locations/me-west1/services/lastmove/schemas/main","source":{"files":[{"path":"schema.gql","content":"type User @table {\n  username: String!\n  email: String!\n  createdAt: Timestamp!\n  bio: String\n  profilePictureUrl: String\n  lastOnline: Timestamp\n}\n\ntype Game @table {\n  title: String!\n  genre: String!\n  developer: String!\n  releaseYear: Int!\n  createdAt: Timestamp!\n  description: String\n  imageUrl: String\n  trailerUrl: String\n  minPlayers: Int\n  maxPlayers: Int\n}\n\ntype UserGame @table {\n  user: User!\n  game: Game!\n  status: String!\n  addedAt: Timestamp!\n  lastPlayedAt: Timestamp\n  playtimeHours: Float\n  achievementsUnlocked: Int\n}\n\ntype Review @table {\n  user: User!\n  game: Game!\n  rating: Int!\n  createdAt: Timestamp!\n  updatedAt: Timestamp!\n  reviewText: String\n}\n\ntype Friendship @table {\n  initiator: User!\n  recipient: User!\n  status: String!\n  createdAt: Timestamp!\n}"}]},"datasources":[{"postgresql":{"database":"fdcdb","cloudSql":{"instance":"projects/lastmove-72a58/locations/me-west1/instances/lastmove-fdc"},"schemaMigration":"MIGRATE_COMPATIBLE"}}]}]}
+[debug] [2026-03-23T22:15:55.596Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:15:55.596Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:15:55.596Z] >>> [apiv2][query] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/me-west1/services/lastmove/connectors pageSize=100&pageToken=&fields=connectors.name%2Cconnectors.source.files
+[debug] [2026-03-23T22:15:55.778Z] <<< [apiv2][status] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/me-west1/services/lastmove/connectors 200
+[debug] [2026-03-23T22:15:55.778Z] <<< [apiv2][body] GET https://firebasedataconnect.googleapis.com/v1/projects/lastmove-72a58/locations/me-west1/services/lastmove/connectors {}
+[debug] [2026-03-23T22:15:55.779Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:15:55.779Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:15:55.779Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/lastmove-72a58/billingInfo [none]
+[debug] [2026-03-23T22:15:56.590Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/lastmove-72a58/billingInfo 200
+[debug] [2026-03-23T22:15:56.590Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/lastmove-72a58/billingInfo {"name":"projects/lastmove-72a58/billingInfo","projectId":"lastmove-72a58","billingAccountName":"billingAccounts/012901-0856A8-508F22","billingEnabled":true}
+[debug] [2026-03-23T22:15:56.591Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:15:56.591Z] Checked if tokens are valid: true, expires at: 1774305295808
+[debug] [2026-03-23T22:15:56.591Z] >>> [apiv2][query] GET https://monitoring.googleapis.com/v3/projects/lastmove-72a58/timeSeries/ filter=metric.type%3D%22serviceruntime.googleapis.com%2Fquota%2Fallocation%2Fusage%22+AND+metric.label.quota_metric+%3D+%22sqladmin.googleapis.com%2Ffdc_lifetime_free_trial_per_project%22&interval.endTime=2026-03-23T22%3A15%3A56.590Z&interval.startTime=2026-03-16T22%3A15%3A56.590Z
+[debug] [2026-03-23T22:15:57.933Z] <<< [apiv2][status] GET https://monitoring.googleapis.com/v3/projects/lastmove-72a58/timeSeries/ 200
+[debug] [2026-03-23T22:15:57.933Z] <<< [apiv2][body] GET https://monitoring.googleapis.com/v3/projects/lastmove-72a58/timeSeries/ {"timeSeries":[{"metric":{"labels":{"quota_metric":"sqladmin.googleapis.com/fdc_lifetime_free_trial_per_project"},"type":"serviceruntime.googleapis.com/quota/allocation/usage"},"resource":{"type":"consumer_quota","labels":{"project_id":"lastmove-72a58","location":"global","service":"sqladmin.googleapis.com"}},"metricKind":"GAUGE","valueType":"INT64","points":[{"interval":{"startTime":"2026-03-23T21:38:55Z","endTime":"2026-03-23T21:38:55Z"},"value":{"int64Value":"1"}}]}],"unit":"1"}
+[warn] !  dataconnect: CloudSQL no cost trial has already been used on this project. 
+[info] +  dataconnect: Detected existing apps . (web), functions (admin_node), lastmove (admin_node) 
+[info] i  dataconnect\dataconnect.yaml is unchanged 
+[info] i  dataconnect\schema\schema.gql is unchanged 
